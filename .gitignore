@@ -1,0 +1,39 @@
+# SPM Defaults
+.DS_Store
+/.build
+/Packages
+xcuserdata/
+
+# Xcode
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+profile
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+
+# Bundler
+.bundle
+
+# Fastlane Output
+fastlane/README.md
+fastlane/report.xml
+fastlane/test_output
+
+# Package Managers
+Carthage
+Pods/
+Gemfile
+Gemfile.lock
+Example/Gemfile
+Example/Gemfile.lock

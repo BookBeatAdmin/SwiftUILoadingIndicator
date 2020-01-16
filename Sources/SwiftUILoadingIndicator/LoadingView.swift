@@ -3,15 +3,19 @@ import SwiftUI
 
 public struct LoadingView: View {
     
-    public init(_ loadingAnimation: LoadingAnimation = .dots) {
+    public init(
+        _ loadingAnimation: LoadingAnimation = .dots,
+        backgroundColor: Color = Color(.black).opacity(0.8)) {
         animation = loadingAnimation
+        self.backgroundColor = backgroundColor
     }
     
     private let animation: LoadingAnimation
+    private let backgroundColor: Color
     
     public var body: some View {
         ZStack {
-            Color(.black).opacity(0.8)
+            backgroundColor
             animation
         }
     }
@@ -27,7 +31,7 @@ struct LoadingView_Previews: PreviewProvider {
             }
             VStack {
                 Text(".dots")
-                LoadingView(.dots)
+                LoadingView(.dots, backgroundColor: Color(.green).opacity(0.3))
             }
             VStack {
                 Text(".moreDots")

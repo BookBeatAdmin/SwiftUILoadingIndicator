@@ -1,19 +1,18 @@
 import SwiftUILoadingIndicator
 import SwiftUI
 
-
-
 struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List {
+            ScrollView(showsIndicators: false) {
                 ForEach(0..<LoadingView.all.count) { index in
                     VStack {
                         Spacer()
-                            .frame(height: 100)
+                            .frame(height: 50)
                         LoadingView.all[index]
-                            .frame(height: 200)
+                            .frame(width: 200, height: 200)
+                        .cornerRadius(20)
                     }
                 }
             }.navigationBarTitle("LoadingIndicators", displayMode: .automatic)
@@ -27,7 +26,8 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-private extension LoadingView {
+extension LoadingView {
+    
     static let all =
         [LoadingView(.dots),
          LoadingView(.moreDots),
@@ -36,7 +36,7 @@ private extension LoadingView {
          LoadingView(.symmetricalMoreDots),
          LoadingView(.verticalWaves),
          LoadingView(.bubbles),
-         LoadingView(.crazyBubbles, backgroundColor: Color(.blue)),
-         LoadingView(.slowWaves),
+         LoadingView(.crazyBubbles, backgroundColor: Color(.clear)),
+         LoadingView(.slowWaves, backgroundColor: Color(.purple).opacity(0.3)),
          LoadingView(.waves)]
 }
